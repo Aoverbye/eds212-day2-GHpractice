@@ -1,0 +1,94 @@
+---
+title: "day 2b Exercises"
+author: "Amanda Overbye"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+# load packages using library ----
+library(tidyverse)
+# define function ----
+eq1 <- function(x) {
+  3 * x^2 + 4
+}
+# create data frame with range of values to evaluate function across ----
+my_data_range <- data.frame(x = c(1, 100))
+
+# plot our function as a continous curve over our specified range of values in our df ----
+
+ggplot( data = my_data_range, aes (x = x)) +
+  geom_function(fun = eq1)
+```
+
+
+
+
+
+
+
+
+
+```{r}
+eq2 <- function(x) {
+  24 - 5*x^3 + 21 x^2
+} 
+my_data_range <- data.frame(x = c(-250, 50))
+
+ggplot(data = my_data_range, aes(x = y)) +
+  geom_function(fun = eq2)
+
+```
+
+
+
+```{r}
+#define new function ----
+eq2 <-function(y) 
+  
+```
+
+```{r}
+#create function C(t) ----
+ct <- function(t) {
+  t^3
+}
+
+# find the deriv of C(t) ----
+
+dc_dt <- D(expr = expression(t^3), name = "t")
+dc_dt
+# store derivative as function ----
+dc_dt_fun <- function(t) {
+  3 * t^2
+}
+
+#df of values ----
+
+my_data_range <- data.frame(t = c(-5, 5))
+
+
+#plot function 
+
+ggplot(data = my_data_range, aes (x = t)) +
+  geom_function(fun = ct, color = "green") +
+  geom_function(fun = dc_dt_fun, color = "purple")
+```
+
+```{r}
+# partial derivatives :) ----
+
+f_xyz <- expression(2 * x * y - 3 * x^2 * z^3)
+#partial with respect to just x
+
+df_dx <- D(expr = f_xyz, name =  "x")
+df_dx
+
+
+```
+
+
+
+
+
